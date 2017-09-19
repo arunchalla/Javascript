@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 2</title>
+  <style>
+    .container {
+      position: relative;
+      width: 30%;
+
+    }
+
+    #img1 {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .greetings {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: #008CBA;
+    }
+
+    .container:hover .greetings {
+      opacity: 1;
+    }
+
+    .greet {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      top: 35%;
+      left: 35%;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <img src="img_3137.jpg" alt="" id="img1" height="300px" width="400px"/>
+  <div class="greetings">
+    <p class="greet">Hello World..!!</p>
+  </div>
+</div>
+</body>
+</html>

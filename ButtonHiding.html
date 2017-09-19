@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1</title>
+  <style>
+    #btn {
+      height:30px;
+      background-color: #5c5c5c;
+      color: #fff;
+    }
+    #container {
+      background-color: lightblue;
+      height: 100px;
+      width: 40%;
+    }
+
+    #container p {
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+<body>
+<input type="button" id="btn" value="Togle hide and show" onClick="hideAndShow();"/>
+<div id="container">
+  <p>Click the button to hide me.</p>
+</div>
+<script>
+    function hideAndShow() {
+        var showOff;
+        if (showOff = true) {
+            alert("iam hiding container")
+            document.getElementById('container').style.visibility = 'hidden';
+        } else {
+            document.getElementById('container').style.visibility = 'visible';
+        }
+    }
+</script>
+</body>
+</html>

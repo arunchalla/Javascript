@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email separation</title>
+  <style>
+    .input {
+      width: 250px;
+    }
+
+    #button {
+      width: 250px;
+    }
+
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+    function SeparateEmailAndDomain() {
+        var emailAddress = document.getElementById("email").value;
+        var emailPart = emailAddress.substring(0, emailAddress.indexOf("@"));
+        var domainPart = emailAddress.substring(emailAddress.indexOf("@") + 1);
+        document.getElementById("txtEmailPart").value = emailPart;
+        document.getElementById("txtDomainPart").value = domainPart;
+    }
+</script>
+<form>
+  <table style="border:1px solid black;">
+    <tr>
+      <td>Email Address</td>
+      <td class="input">
+        <input type="text" id="email" value=""/>
+      </td>
+    </tr>
+    <tr>
+      <td>Email part</td>
+      <td class="input">
+        <input type="text" id="txtEmailPart" value=""/>
+      </td>
+    </tr>
+    <tr>
+      <td>Domain part</td>
+      <td class="input">
+        <input type="text" id="txtDomainPart" value="">
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <input type="button" id="button" onClick="SeparateEmailAndDomain()" value="separate Email and Domain"/>
+      </td>
+    </tr>
+  </table>
+</form>
+
+
+</body>
+</html>

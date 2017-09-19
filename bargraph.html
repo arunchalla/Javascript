@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <script src="https://code.highcharts.com/highcharts.js"></script>
+   <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</head>
+<body>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</body>
+<script>
+    Highcharts.chart('container', {
+
+        title: {
+            text: 'Number of people visiting temple'
+        },
+        xAxis: [{
+            categories: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
+            crosshair: true
+
+        }],
+        yAxis: [{
+            labels: {
+                format: '{value}K',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            title: {
+                text: 'No.of people in thousands',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            }
+        }, { // Secondary yAxis
+            title: {
+                text: 'Income ',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            },
+            labels: {
+                format: '{value} INR',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            opposite: true
+        }],
+        tooltip: {
+            shared: false
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            x: 200,
+            verticalAlign: 'top',
+            y: 100,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        series: [{
+            name: 'income',
+            type: 'column',
+            yAxis: 1,
+            data: [10000, 6000, 12000, 7000, 9000, 15000, 25000],
+            tooltip: {
+                valueSuffix: ' INR'
+            }
+
+        }, {
+            name: 'No.of people in thousands',
+            type: 'spline',
+            data: [250, 500, 900, 1000, 1250, 1050, 850],
+            tooltip: {
+                valueSuffix: 'K'
+            }
+        }]
+    });
+</script>
+</html>
